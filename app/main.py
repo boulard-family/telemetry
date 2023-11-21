@@ -15,6 +15,7 @@ class Base(DeclarativeBase):
 class Counter(Base):
     __tablename__ = "counter"
 
+    id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str]
     value: Mapped[int]
 
