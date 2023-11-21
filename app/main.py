@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
-from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import create_engine, select
 
 app = FastAPI()
@@ -15,8 +15,8 @@ class Base(DeclarativeBase):
 class Counter(Base):
     __tablename__ = "counter"
 
-    name: str
-    value: int
+    name: Mapped[str]
+    value: Mapped[int]
 
 
 @asynccontextmanager
