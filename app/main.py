@@ -5,6 +5,9 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, Session
 from sqlalchemy import create_engine, select
 
 
+app = FastAPI()
+
+
 class Base(DeclarativeBase):
     pass
 
@@ -59,7 +62,5 @@ def get_article_counter(article: str):
     return {"views": value}
 
 
-if __name__ == "__main__":
-    app = FastAPI()
-    engine = create_engine("sqlite:///telemetry.db")
-    Base.metadata.create_all(engine)
+engine = create_engine("sqlite:///telemetry.db")
+Base.metadata.create_all(engine)
