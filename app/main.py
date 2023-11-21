@@ -8,7 +8,11 @@ app = FastAPI()
 engine = create_engine("sqlite:///telemetry.db")
 
 
-class Counter(DeclarativeBase):
+class Base(DeclarativeBase):
+    pass
+
+
+class Counter(Base):
     __tablename__ = "counter"
 
     name: str
