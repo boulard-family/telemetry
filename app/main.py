@@ -5,7 +5,7 @@ from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy import create_engine, select
 
 app = FastAPI()
-engine = create_engine("sqlite://telemetry.db")
+engine = create_engine("sqlite:///telemetry.db")
 
 
 class Counter(DeclarativeBase):
